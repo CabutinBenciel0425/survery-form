@@ -1,19 +1,19 @@
-type QuestionsType = {
+export type QuestionsType = {
   id: number;
   text: string;
   type: string;
   options?: string[];
 };
 
-type SurveyDataType = {
+export type SectionsType = {
   id: string;
   title: string;
   questions: QuestionsType[];
 };
 
-type SurveyDatasetType = {
+export type SurveyDatasetType = {
   title: string;
-  sections: SurveyDataType[];
+  sections: SectionsType[];
 };
 
 export const questions: SurveyDatasetType = {
