@@ -16,6 +16,33 @@ export type SurveyDatasetType = {
   sections: SectionsType[];
 };
 
+export type FormValues = {
+  qA_1: string;
+  qA_2: string;
+  qA_3: string;
+  qA_4: string;
+
+  qB_1: string;
+  qB_2: string[];
+  qB_3: string;
+  qB_4: string;
+  qB_5: string;
+
+  qC_1: string;
+  qC_2: string;
+  qC_3: string;
+
+  qD_1: string;
+  qD_2: string;
+
+  qE_1: string;
+  qE_2: string;
+  qE_3: string;
+
+  qF_1: string;
+  qF_2: string;
+};
+
 export const questions: SurveyDatasetType = {
   title: "Customer Feedback Survey",
   sections: [

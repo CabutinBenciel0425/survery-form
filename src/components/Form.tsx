@@ -1,20 +1,31 @@
-import { questions } from "../data/questions";
+import type { FieldErrors, UseFormRegister } from "react-hook-form";
+import { questions, type FormValues } from "../data/questions";
 import SurveySection from "./SurveySection";
 
-function Form({ pageNumber }: { pageNumber: number }) {
+type FormPropsType = {
+  pageNumber: number;
+  register: UseFormRegister<FormValues>;
+  errors: FieldErrors<FormValues>;
+};
+
+function Form({ pageNumber, register, errors }: FormPropsType) {
   return (
-    <form className="w-[90%] h-8/12 relative overflow-x-hidden xl:w-300 z-10">
+    <div className="w-full h-fit relative z-10 overflow-hidden">
       <div
         className="flex transition-transform duration-500 ease-in-out"
         style={{ transform: `translateX(-${(pageNumber - 1) * 100}%)` }}
       >
         {questions.sections.map((section) => (
-          <div key={section.id} className="w-full shrink-0 h-full">
-            <SurveySection section={section} />
+          <div key={section.id} className="w-full shrink-0 h-fit">
+            <SurveySection
+              section={section}
+              register={register}
+              errors={errors}
+            />
           </div>
         ))}
       </div>
-    </form>
+    </div>
   );
 }
 
