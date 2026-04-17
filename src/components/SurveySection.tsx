@@ -7,10 +7,11 @@ type SurveySectionTypes = {
 
 function SurveySection({ section }: SurveySectionTypes) {
   return (
-    <div className="py-5 px-10">
-      <h2>{section.title}</h2>
+    <div className="py-5 px-10 flex flex-col gap-8">
       {section.questions.map((sec) => (
-        <SurveyQuestion questionData={sec} key={sec.id} />
+        <div className="border-b border-b-gray-300 py-5" key={sec.id}>
+          <SurveyQuestion questionData={sec} key={sec.id} />
+        </div>
       ))}
     </div>
   );

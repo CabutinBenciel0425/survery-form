@@ -1,12 +1,19 @@
 import { questions } from "../data/questions";
 import SurveySection from "./SurveySection";
 
-function Form() {
+function Form({ pageNumber }: { pageNumber: number }) {
   return (
-    <form>
-      {questions.sections.map((section) => (
-        <SurveySection section={section} key={section.id} />
-      ))}
+    <form className="w-[90%] h-8/12 relative overflow-x-hidden xl:w-300 z-10">
+      <div
+        className="flex transition-transform duration-500 ease-in-out"
+        style={{ transform: `translateX(-${(pageNumber - 1) * 100}%)` }}
+      >
+        {questions.sections.map((section) => (
+          <div key={section.id} className="w-full shrink-0 h-full">
+            <SurveySection section={section} />
+          </div>
+        ))}
+      </div>
     </form>
   );
 }
