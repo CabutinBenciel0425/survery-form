@@ -54,7 +54,7 @@ function SurveyQuestion({ questionData }: SurveyQuestionType) {
           >
             {questionData.text}
           </label>
-          <div className="w-5/12">
+          <div className="w-5/12 flex items-center">
             <select id={`q-${questionData.id}`} className="border rounded-sm">
               {" "}
               {questionData.options?.map((opt) => (

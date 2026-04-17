@@ -1,6 +1,6 @@
 type ButtonPropsType = {
   className: string;
-  disabled: boolean;
+  disabled?: boolean;
   onClick: React.MouseEventHandler<HTMLButtonElement>;
   children: React.ReactNode;
 };
